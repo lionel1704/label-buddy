@@ -1,0 +1,8 @@
+name: label-buddy
+description: Add or remove labels from issues as required
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: tag
+  color: blue
