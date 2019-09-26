@@ -1,8 +1,13 @@
-name: label-buddy
-description: Add or remove labels from issues as required
+name: 'Label Buddy'
+description: 'Add or remove labels to an issue or PR'
+inputs:
+  add: 
+    description: 'Labels to be added'
+    required: false
+  remove:
+    description: 'Labels to be removed'
+    required: false
 runs:
-  using: docker
-  image: Dockerfile
-branding:
-  icon: tag
-  color: blue
+  using: 'node12'
+  main: 'dist/index.js'
+

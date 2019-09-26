@@ -1,15 +1,15 @@
 {
   "name": "label-buddy",
-  "private": true,
+  "version": "0.0.1",
+  "description": "Github Action to help modify labels for an issue / pull request",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Lionel Faber <lionel1704@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "actions-toolkit": "^2.2.0"
-  },
-  "devDependencies": {
-    "jest": "^24.5.0"
+    "@actions/core": "^1.1.1",
+    "@actions/github": "^1.1.0"
   }
 }
