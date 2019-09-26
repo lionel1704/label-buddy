@@ -6015,7 +6015,7 @@ try {
     octokit.issues.addLabels({
         repo: context.repo,
         owner: context.repo.owner,
-        issue_number: context.payload.issue,
+        issue_number: context.payload.issue.number,
         labels: labelsToAdd
     });
 
@@ -6023,7 +6023,7 @@ try {
         octokit.issues.removeLabels({
             repo: context.repo,
             owner: context.repo.owner,
-            issue_number: context.payload.issue,
+            issue_number: context.payload.issue.number,
             label,
         }); 
     });
