@@ -6014,14 +6014,14 @@ const github = __webpack_require__(148);
         const context = github.context;
         console.log(
             `
-            ${context.repo}
+            ${context.repo.repo}
             ${context.repo.owner}
             ${context.payload.issue.number}
             `
         );
         
         await octokit.issues.addLabels({
-            repo: context.repo,
+            repo: context.repo.repo,
             owner: context.repo.owner,
             issue_number: context.payload.issue.number,
             labels: labelsToAdd
