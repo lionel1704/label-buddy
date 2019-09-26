@@ -11,21 +11,21 @@ try {
     const octokit = new github.GitHub(githubToken);
     const context = github.context;
     
-    octokit.issues.addLabels({
+    await octokit.issues.addLabels({
         repo: context.repo,
         owner: context.repo.owner,
         issue_number: context.payload.issue.number,
         labels: labelsToAdd
     });
 
-    labelsToRemove.forEach(label => {
-        octokit.issues.removeLabels({
-            repo: context.repo,
-            owner: context.repo.owner,
-            issue_number: context.payload.issue.number,
-            label,
-        }); 
-    });
+    // labelsToRemove.forEach(label => {
+    //     octokit.issues.removeLabels({
+    //         repo: context.repo,
+    //         owner: context.repo.owner,
+    //         issue_number: context.payload.issue.number,
+    //         label,
+    //     }); 
+    // });
 } catch (error) {
     core.setFailed(error.message)
 }
