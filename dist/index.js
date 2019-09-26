@@ -6003,7 +6003,7 @@ const core = __webpack_require__(827);
 const github = __webpack_require__(148);
 
 try {
-    const labelsToAdd = core.getInput('add');
+    const labelsToAdd = JSON.parse(core.getInput('add'));
     console.log(`Labels to add: ${labelsToAdd}`);
     const labelsToRemove = JSON.parse(core.getInput('remove'));
     console.log(`Labels to remove: ${labelsToAdd}`);

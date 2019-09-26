@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const labelsToAdd = core.getInput('add');
+    const labelsToAdd = JSON.parse(core.getInput('add'));
     console.log(`Labels to add: ${labelsToAdd}`);
     const labelsToRemove = JSON.parse(core.getInput('remove'));
     console.log(`Labels to remove: ${labelsToAdd}`);
