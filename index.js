@@ -11,6 +11,12 @@ const github = require('@actions/github');
         const githubToken = core.getInput('githubToken');
         const octokit = new github.GitHub(githubToken);
         const context = github.context;
+        console.log(
+            `${context.repo}
+            ${context.repo.owner}
+            ${context.payload.issue.number}
+            `
+        );
         
         await octokit.issues.addLabels({
             repo: context.repo,

@@ -6012,6 +6012,12 @@ const github = __webpack_require__(148);
         const githubToken = core.getInput('githubToken');
         const octokit = new github.GitHub(githubToken);
         const context = github.context;
+        console.log(
+            `${context.repo}
+            ${context.repo.owner}
+            ${context.payload.issue.number}
+            `
+        );
         
         await octokit.issues.addLabels({
             repo: context.repo,
