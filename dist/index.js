@@ -6013,7 +6013,8 @@ const github = __webpack_require__(148);
         const octokit = new github.GitHub(githubToken);
         const context = github.context;
         console.log(
-            `${context.repo}
+            `
+            ${context.repo}
             ${context.repo.owner}
             ${context.payload.issue.number}
             `

@@ -12,7 +12,8 @@ const github = require('@actions/github');
         const octokit = new github.GitHub(githubToken);
         const context = github.context;
         console.log(
-            `${context.repo}
+            `
+            ${context.repo}
             ${context.repo.owner}
             ${context.payload.issue.number}
             `
