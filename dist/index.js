@@ -6013,17 +6013,17 @@ try {
     const context = github.context;
     
     octokit.issues.addLabels({
-        ...context.repo,
-        ...context.repo.owner,
-        ...context.payload.issue,
+        repo: context.repo,
+        owner: context.repo.owner,
+        issue_number: context.payload.issue,
         labels: labelsToAdd
     });
 
     labelsToRemove.forEach(label => {
         octokit.issues.removeLabels({
-            ...context.repo,
-            ...context.repo.owner,
-            issue_number: context.payload.issue.number,
+            repo: context.repo,
+            owner: context.repo.owner,
+            issue_number: context.payload.issue,
             label,
         }); 
     });
