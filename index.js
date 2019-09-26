@@ -4,7 +4,7 @@ const github = require('@actions/github');
 try {
     const labelsToAdd = core.getInput('add');
     console.log(`Labels to add: ${labelsToAdd}`);
-    const labelsToRemove = core.getInput('remove');
+    const labelsToRemove = JSON.parse(core.getInput('remove'));
     console.log(`Labels to remove: ${labelsToAdd}`);
 
     const githubToken = core.getInput('githubToken');
@@ -22,7 +22,7 @@ try {
         octokit.issues.removeLabels({
             ...context.repo,
             ...context.repo.owner,
-            ...context.payload.issue.number,
+            issue_number: context.payload.issue.number,
             label,
         }); 
     });

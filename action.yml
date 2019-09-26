@@ -7,6 +7,9 @@ inputs:
   remove:
     description: 'Labels to be removed'
     required: false
+  githubToken:
+    description: 'GitHub token'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
